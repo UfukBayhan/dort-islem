@@ -505,12 +505,10 @@ public class MathGame : MonoBehaviour
         // olaylarının yeni seviyeye taşınmasına izin verme.
         yield return null;
 
-        // SoundFX nesnesi ve AudioSource bileşeni var mı kontrol et
         if (SoundFX != null)
         {
             var audioSource = SoundFX.GetComponent<AudioSource>();
 
-            // Eğer AudioSource varsa ve bir ses çalıyorsa, bitmesini bekle
             if (audioSource != null && audioSource.isPlaying)
             {
                 // Prefab yanlışlıkla loop'a alınsa veya ses sistemi takılsa bile
@@ -549,7 +547,7 @@ public class MathGame : MonoBehaviour
     {
         int clampedIndex = Mathf.Min(index, 100);
 
-        // Grup bilgisi (5’lik gruplar)
+        // Zorluk beş seviyelik gruplarla artar.
         int groupIndex = clampedIndex / 5;
         int groupStart = groupIndex * 5;
         int groupEnd = Mathf.Min(groupStart + 4, 100);
@@ -558,7 +556,6 @@ public class MathGame : MonoBehaviour
         // Dalga (sinüs ile 0–1 arası dalgalanma)
         float wave = (Mathf.Sin(clampedIndex * Mathf.PI / 18f) + 1f) * 0.5f;
 
-        // --- GOAL COUNT ---
         if (index <= 50)
         {
             int goalMin = GoalCurve(groupStart);
@@ -570,7 +567,6 @@ public class MathGame : MonoBehaviour
             goalCount = 20; // 50 sonrası sabit
         }
 
-        // --- NUMBER RANGE ---
         if (index <= 50)
         {
             int rangeMin = RangeCurve(groupStart);
