@@ -1,88 +1,90 @@
-# Dört İşlem
+# Four Operations
 
-Unity ve C# ile geliştirilmiş, yedi farklı modda eksik sayıyı bulmaya dayanan matematik oyunu. Oyuncu, işlemdeki soru işaretini tamamlayan cevabı seçerek seviyeler boyunca ilerler.
+A Unity and C# math game with seven modes built around finding the missing number. Players complete arithmetic expressions by choosing the correct answer and progressing through levels.
 
-**Oyun tasarımı ve geliştirme: [Ufuk Bayhan](https://github.com/UfukBayhan)**
+**Game design and development: [Ufuk Bayhan](https://github.com/UfukBayhan)**
 
-![Dört İşlem — mod seçim ekranı](Docs/mode-selection.png)
+The in-game interface is in Turkish.
 
-## Oynanış
+![Four Operations — mode selection](Docs/mode-selection.png)
 
-Her soruda bir işlemin bir terimi veya sonucu gizlenir. Dört seçenek arasından doğru sayıyı seçin. Doğru cevaplar seviye hedefine ilerletir; yanlış cevaplar hata sayacına eklenir ve aynı soruyu tekrar denemenize izin verir. Başlangıçta üç doğru cevapla sonraki seviyeye geçilir. İlerleyen seviyelerde soru aralıkları ve hedefler değişir.
+## Gameplay
 
-- Yedi mod arasında geçiş sağlayan başlangıç ekranı.
-- İşleme göre üretilen sorular ve yanıltıcı cevap seçenekleri.
-- Seviye ilerlemesi, süre ve hata takibi.
-- Doğru ve yanlış cevaplar için görsel ve sesli geri bildirim.
-- Yeniden başlatma ve mod seçim ekranına dönüş.
-- Farklı pencere boyutlarına uyarlanan Unity UI arayüzü.
+Each question hides an operand or the result of an arithmetic expression. Choose the correct number from four options. Correct answers advance the level goal; incorrect answers increase the mistake counter and let you try the same question again. The first level requires three correct answers. Number ranges and goals change as you progress.
 
-## Oyun modları
+- A starting screen with seven selectable modes.
+- Generated arithmetic questions and distractor answers.
+- Level progression, elapsed time, and mistake tracking.
+- Visual and audio feedback for correct and incorrect answers.
+- Restart controls and navigation back to mode selection.
+- A Unity UI layout that adapts to different window sizes.
 
-| Mod | İşlemler |
+## Game modes
+
+| Mode | Operations |
 | --- | --- |
-| Toplama | + |
-| Çıkarma | − |
-| Çarpma | × |
-| Bölme | ÷ |
-| Toplama + Çıkarma | +, − |
-| Çarpma + Bölme | ×, ÷ |
-| Dört İşlem | +, −, ×, ÷ |
+| Addition | + |
+| Subtraction | − |
+| Multiplication | × |
+| Division | ÷ |
+| Addition + Subtraction | +, − |
+| Multiplication + Division | ×, ÷ |
+| Four Operations | +, −, ×, ÷ |
 
-## Oyun içi görüntüler
+## Screenshots
 
-Görüntüler çalışan Windows sürümünden alınmıştır.
+Captured from the running Windows build.
 
-### Toplama
+### Addition
 
-![Toplama oyun ekranı](Docs/Toplama.png)
+![Addition gameplay](Docs/Toplama.png)
 
-### Bölme
+### Division
 
-![Bölme oyun ekranı](Docs/Bolme.png)
+![Division gameplay](Docs/Bolme.png)
 
-### Dört İşlem
+### Four Operations
 
-![Dört İşlem karma mod](Docs/DortIslem.png)
+![Four Operations mixed mode](Docs/DortIslem.png)
 
-## Unity ile çalıştırma
+## Getting started
 
-1. Repoyu klonlayın veya ZIP olarak indirin.
-2. Unity Hub üzerinden proje klasörünü ekleyin.
-3. **Unity 6000.3.9f1** ile açıp paketlerin içe aktarılmasını bekleyin.
-4. Project panelinde `Assets/Game/Scenes/ModeSelect.unity` sahnesine çift tıklayın.
-5. **Play** düğmesine basın ve bir oyun modu seçin.
+1. Clone the repository or download it as a ZIP archive.
+2. Add the project folder through Unity Hub.
+3. Open it with **Unity 6000.3.9f1** and wait for package imports to finish.
+4. In the Project panel, double-click `Assets/Game/Scenes/ModeSelect.unity`.
+5. Press **Play** and select a game mode.
 
-Unity boş bir `Untitled` sahnesiyle açılırsa dördüncü adımdaki başlangıç sahnesini açın. Game sekmesi görünmüyorsa **Window → General → Game** menüsünü kullanın.
+If Unity opens an empty `Untitled` scene, open the starting scene in step 4. If the Game tab is missing, use **Window → General → Game**.
 
-Cevapları fareyle seçebilirsiniz. **Modlar** düğmesi veya **Escape** seçim ekranına döndürür. **Yeniden başla**, aktif modun oturumunu ilk seviyeden başlatır. Süre ve hata sayacı aktif seviyeyi gösterir.
+Use the mouse to select answers. The **Modlar** (Modes) button or **Escape** returns to mode selection. **Yeniden başla** (Restart) restarts the current mode from its first level. The timer and mistake counter display values for the current level.
 
-## Teknik yapı
+## Project structure
 
-| Dosya / klasör | Görevi |
+| File / folder | Purpose |
 | --- | --- |
-| `Assets/Game/Scenes` | Başlangıç ekranı ve yedi oyun sahnesi |
-| `MathGame.cs` | Soru üretimi, seçenekler ve zorluk ilerlemesi |
-| `StemGameManager.cs` | Paylaşılan oyun akışı ve oturum yönetimi |
-| `ModeNavigation.cs` | Modlar arasında sahne geçişi |
-| `SessionHud.cs` | Seviye, süre, hata sayacı ve yeniden başlatma |
-| `FeedbackEffect.cs` | Cevap geri bildirimi |
-| `Assets/Resources/ModeConfiguration.json` | Modların başlangıç ayarları |
+| `Assets/Game/Scenes` | Starting screen and seven game scenes |
+| `MathGame.cs` | Question generation, answer options, and difficulty progression |
+| `StemGameManager.cs` | Shared game flow and session management |
+| `ModeNavigation.cs` | Scene navigation between modes |
+| `SessionHud.cs` | Level, timer, mistake counter, and restart controls |
+| `FeedbackEffect.cs` | Answer feedback |
+| `Assets/Resources/ModeConfiguration.json` | Initial settings for each mode |
 
-Arayüz Unity UI ve TextMesh Pro kullanır. Oyun yerel çalışır; kullanıcı hesabı veya sunucu bağlantısı gerektirmez. Bu portföy sürümündeki arayüz, basit şekiller, metinler ve işlem sembolleriyle hazırlanmıştır.
+The interface uses Unity UI and TextMesh Pro. The game runs locally without an account or server connection. This portfolio edition uses simple shapes, text, and arithmetic symbols for its interface.
 
-## Derleme ve doğrulama
+## Building and validation
 
-**File → Build Profiles** üzerinden Windows hedefini seçip derleme alabilirsiniz. Başlangıç sahnesi `ModeSelect` olmalıdır. Derleme çıktıları ve Unity'nin ürettiği önbellek klasörleri repoya dahil değildir.
+Select the Windows target through **File → Build Profiles** to create a build. `ModeSelect` should be the starting scene. Build outputs and Unity-generated cache folders are excluded from the repository.
 
-`Assets/Editor/PreviewBuilder.cs` içindeki `PreviewBuilder.Build`, sahneleri yeniden üretip Windows geliştirme derlemesi alır. **Bu araç üretilmiş sahnelerin üzerine yazar**; elle düzenlenmiş sahneler üzerinde çalıştırmadan önce değişikliklerinizi kaydedin.
+`PreviewBuilder.Build` in `Assets/Editor/PreviewBuilder.cs` regenerates the scenes and creates a Windows development build. **This tool overwrites generated scenes**; commit or back up any manual scene edits before running it.
 
-Geliştirme derlemesi `--preview-checks` parametresiyle çalıştırıldığında yedi mod için soru ve seçenek tutarlılığı, cevap kilidi, seviye geçişi, yeniden başlatma ve menüye dönüş kontrol edilir. Bu kontroller normal oyun açılışında çalışmaz.
+Running a development build with `--preview-checks` checks question and answer consistency, duplicate-answer protection, level transitions, restart behavior, and menu navigation across all seven modes. These checks do not run during normal gameplay.
 
-Doğrulama: Windows derlemesi başarılı; yedi modda 35 soru/seçenek kontrolü ve akış kontrolleri geçti. Unity Editor içinde mod seçimi ve doğru cevapla sonraki soruya geçiş ayrıca denendi. Mobil cihaz testi yapılmadı.
+Validation completed: the Windows build succeeded, and 35 question/answer checks plus game-flow checks passed across all seven modes. Mode selection and advancing to the next question after a correct answer were also tested in the Unity Editor. Mobile device testing has not been performed.
 
-## Üçüncü taraf bileşenler
+## Third-party components
 
-Liberation Sans yazı tipi SIL Open Font License kapsamındadır; lisans metni `Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt` dosyasındadır. Unity ve TextMesh Pro bileşenlerinin mevcut bildirimleri korunmuştur.
+Liberation Sans is distributed under the SIL Open Font License. Its license text is included at `Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt`. Existing Unity and TextMesh Pro notices are preserved.
 
-Bu depo portföy ve inceleme amacıyla paylaşılmıştır. Ayrı bir açık kaynak lisansı verilmemiştir.
+This repository is shared for portfolio presentation and review. No separate open-source license has been granted.
