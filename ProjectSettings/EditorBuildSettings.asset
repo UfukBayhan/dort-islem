@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Game/Scenes/ModeSelect.unity
+    guid: 5190b91983467d8478820a0bd4407ba4
+  - enabled: 1
+    path: Assets/Game/Scenes/Toplama.unity
+    guid: 867451182a0988b45a1b3f90d8f5a7ee
+  - enabled: 1
+    path: Assets/Game/Scenes/Cikarma.unity
+    guid: d45849cbedf111c45b3efb70f656e625
+  - enabled: 1
+    path: Assets/Game/Scenes/Carpma.unity
+    guid: 5d5b1cc520739ba45a7926918d4303b6
+  - enabled: 1
+    path: Assets/Game/Scenes/Bolme.unity
+    guid: bd1e4bf88ca64474da1648c807e2eaff
+  - enabled: 1
+    path: Assets/Game/Scenes/ToplamaCikarma.unity
+    guid: c907417405e94b342b4cb72f573ca6ed
+  - enabled: 1
+    path: Assets/Game/Scenes/CarpmaBolme.unity
+    guid: 1d5078b4a9814ed49b9c6b2772876503
+  - enabled: 1
+    path: Assets/Game/Scenes/DortIslem.unity
+    guid: 1615bd99b524cdc42af196b7b1a3e293
+  m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

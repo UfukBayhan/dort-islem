@@ -1,0 +1,72 @@
+{
+  "modes": [
+    {
+      "scene": "Bolme",
+      "x": 10,
+      "y": 10,
+      "goal": 3,
+      "operators": [
+        "/"
+      ]
+    },
+    {
+      "scene": "Carpma",
+      "x": 0,
+      "y": 20,
+      "goal": 3,
+      "operators": [
+        "x"
+      ]
+    },
+    {
+      "scene": "CarpmaBolme",
+      "x": 10,
+      "y": 10,
+      "goal": 3,
+      "operators": [
+        "x",
+        "/"
+      ]
+    },
+    {
+      "scene": "Cikarma",
+      "x": 10,
+      "y": 20,
+      "goal": 3,
+      "operators": [
+        "-"
+      ]
+    },
+    {
+      "scene": "DortIslem",
+      "x": 10,
+      "y": 10,
+      "goal": 3,
+      "operators": [
+        "+",
+        "-",
+        "/",
+        "x"
+      ]
+    },
+    {
+      "scene": "Toplama",
+      "x": 10,
+      "y": 20,
+      "goal": 3,
+      "operators": [
+        "+"
+      ]
+    },
+    {
+      "scene": "ToplamaCikarma",
+      "x": 10,
+      "y": 20,
+      "goal": 3,
+      "operators": [
+        "+",
+        "-"
+      ]
+    }
+  ]
+}
